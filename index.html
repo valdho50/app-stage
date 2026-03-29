@@ -2,21 +2,25 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Stage de Printemps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Appel Stage</title>
+    <!-- On garde le lien vers le manifest pour que l'installation soit proposée -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2c3e50">
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #f8f9fa; }
-        iframe { border: none; width: 100%; height: 100%; display: block; }
-    </style>
-</head>
-<body>
-    <iframe src="https://grist.numerique.gouv.fr/o/docs/a4S2BHPm2g1P/Stage-de-Printemps/p/8"></iframe>
     <script>
+        // Cette fonction redirige immédiatement vers Grist
+        // On utilise replace() pour que l'utilisateur ne revienne pas en arrière sur cette page vide
+        window.location.replace("https://grist.numerique.gouv.fr/o/docs/a4S2BHPm2g1P/Stage-de-Printemps/p/8?embed=true");
+        
+        // Enregistrement du Service Worker pour la PWA
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js');
         }
     </script>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    </style>
+</head>
+<body>
+    <p>Ouverture de l'appel en cours...</p>
 </body>
 </html>
